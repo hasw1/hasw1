@@ -1,1 +1,53 @@
 class UserProfile:
+
+    def __init__(self):
+        self.name = "정우성"
+        self.current_role = "IT 학생"
+        self.previous_degree = "치과기공과 학사"
+        self.certificate = "치과기공사 자격증"
+        self.school = "IT 학교 소프트웨어과"
+        
+        # 기술 스택
+        self.skills = [
+            "Python", "PyQt5", "YOLOv8",     
+            "Flutter", "Dart",               
+            "JavaScript", "Node.js",         
+            "SQL", "MySQL",                  
+            "Git", "Docker"                   
+        ]
+        
+        # 목표 및 포부
+        self.career_goal = (
+            "웹·앱 개발 분야에서 창의적이고 "
+            "효율적인 솔루션을 만들어내는 개발자가 되는 것"
+        )
+        self.strengths = [ 
+            "문제 해결 지향적 사고", 
+            "다양한 기술 스택에 대한 호기심"
+        ]
+        self.weakness = "아직 현장 실무 경험이 부족함"
+
+    def introduce(self):
+        intro = (
+            f"안녕하세요, 저는 {self.previous_degree}을 마치고 {self.school}에서 "
+            f"{self.current_role}로 공부 중인 {self.name}입니다. "
+            f"{', '.join(self.skills[:3])} 등 다양한 기술을 다루며, "
+            f"{self.career_goal}을 목표로 하고 있습니다."
+        )
+        print(intro)
+
+    def detailed_profile(self):
+        print(f"=== {self.name} 프로필 ===")
+        print(f"학력      : {self.previous_degree} → {self.school} ({self.current_role})")
+        print(f"자격증    : {self.certificate}")
+        print("기술 스택 :")
+        for skill in self.skills:
+            print(f"  - {skill}")
+        print(f"강점      : {', '.join(self.strengths)}")
+        print(f"약점      : {self.weakness} (보완 중)")
+
+if __name__ == "__main__":
+    profile = UserProfile()
+    profile.introduce()
+    print()                      
+    profile.detailed_profile()
